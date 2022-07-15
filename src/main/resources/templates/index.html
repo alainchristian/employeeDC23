@@ -22,6 +22,7 @@
     <th scope="col">Last Name</th>
     <th scope="col">Phone</th>
     <th scope="col">Email</th>
+    <th scope="col">Action</th>
   </tr>
   </thead>
   <tbody>
@@ -31,6 +32,11 @@
     <td th:text="${emp.empLName}"/>
     <td th:text="${emp.empPhone}"/>
     <td th:text="${emp.empEmail}"/>
+    <td>
+      <a href="#"class="btn btn-sm btn-success" th:href="@{'/edit/'+${emp.empId}}">Edit</a>
+      <a href="#"class="btn btn-sm btn-danger" th:href="@{'/delete/'+${emp.empId}}">Delete</a>
+    </td>
+
   </tr>
   </tbody>
 </table>

@@ -34,4 +34,15 @@ public class Controller {
         repository.save(employee);
         return "redirect:/";
     }
+    @GetMapping("/delete/{id}")
+    public String deleteEmployee(@PathVariable("id") int id){
+        repository.deleteById(id);
+        return "redirect:/";
+    }
+
+    @GetMapping("/edit/{id}")
+    public String editEmployee(@PathVariable("id") int id, Model model){
+        model.addAttribute("employee",new Employees());
+        return "editemployee";
+    }
 }
